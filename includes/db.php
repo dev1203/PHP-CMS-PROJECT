@@ -8,7 +8,6 @@ foreach ($db as $key=>$value){
     define(strtoupper($key),$value);
 }
 
-
 $connection = mysqli_connect(HOST,USER,PASSWORD,DATABASE);
 
 if(!$connection){
