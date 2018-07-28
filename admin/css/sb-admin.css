@@ -25,6 +25,7 @@ body {
     width: 100%;
     padding: 0;
     background-color: #fff;
+    height: 70vh;
 }
 
 .huge {
@@ -221,4 +222,8 @@ ul.alert-dropdown {
 
 .panel-yellow a:hover {
     color: #df8a13;
+}
+.glyphicon-trash{
+    float: right;
+    margin-right: 50px;
 }
