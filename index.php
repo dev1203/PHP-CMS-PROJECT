@@ -8,19 +8,19 @@
     <div class="container">
 
         <div class="row">
-            <!-- Blog Entries Column -->
-            <div class="col-md-8">
+           <div class="col-md-8">
+               <h1 class="page-header">
+                   Page Heading
+                   <small>Secondary Text</small>
+               </h1>
+           </div>
 
-                <h1 class="page-header">
-                    Page Heading
-                    <small>Secondary Text</small>
-                </h1>
             <?php
             $query = "SELECT * FROM posts";
             $result = mysqli_query($connection,$query);
             print_query($result);
             ?>
-            </div>
+
             <!-- Blog Sidebar Widgets Column -->
             <?php  include "includes/sidebar.php";?>
         </div>
@@ -28,6 +28,9 @@
         <hr>
 <?php
 function print_query($result){
+    ?>
+    <div class="col-md-8">
+<?php
     while($row = mysqli_fetch_assoc($result)){
         $title = $row["post_title"];
         $author = $row["post_author"];
@@ -51,6 +54,9 @@ function print_query($result){
         <hr>
         <?php
     }
+    ?>
+    </div>
+        <?php
 }
 ?>
 <?php include "includes/footer.php"; ?>
