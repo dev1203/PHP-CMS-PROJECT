@@ -15,12 +15,14 @@ if(isset($_GET['delete'])){
     $result = mysqli_query($connection,$query);
     header("Location:categories.php");
 }
-//if (isset($_POST['update'])){
-//    $update = $_POST['update'];
-//    if($update){
-//        $query = "UPDATE category SET '$update' WHERE title = '$'"
-//    }
-//}
+if (isset($_POST['update'])){
+    $update = $_POST['update'];
+    $id = $_POST['id'];
+    if($update){
+        $query = "UPDATE category SET title = '$update' WHERE id='$id'";
+        $result = mysqli_query($connection, $query);
+    }
+}
 ?>
 
 <?php include "includes/header.php" ?>
@@ -43,7 +45,7 @@ if(isset($_GET['delete'])){
                <form method="post" action="categories.php">
                 <div class="form-group">
                     <input class="form-control" placeholder="Enter Category" name="update" value ="<?php echo($row['title'])?>">
-                    <button class="btn btn-primary" type="submit">Update</button>
+                    <button class="btn btn-primary" type="submit" name = "id" value="<?php echo $row['id'] ;?>" >Update</button>
                 </div>
                 </form>
                 <?php
