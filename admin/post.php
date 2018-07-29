@@ -2,20 +2,33 @@
 <?php include "includes/navigation_admin.php"; ?>
 <div id="wrapper">
     <div id="page-wrapper">
-        <h1 class="page-header">Add Posts</h1>
         <?php
         if(isset($_GET)){
-            if(!empty($_GET['add'])){
-                $source = $_GET['add'];
-                if($source==="post"){
+            if(!empty($_GET['source'])){
+                $source = $_GET['source'];
+                if($source==="add"){
                     ?>
+                    <h1 class="page-header">Add Post</h1>
                     <?php
+
                     include "./includes/add_post.php";
+                }
+                else if($source==="remove"){
+
+                    include "./includes/remove_post.php";
+                }
+                else if($source==="edit"){
+                    ?>
+                    <h1 class="page-header">Edit Post</h1>
+                <?php
+                    include "./includes/edit_post.php";
+
                 }
             }
             else{
                 ?>
-                <a type="button" class="btn-add" href="post.php?add=post">Add Post</a>
+                <h1 class="page-header">All Posts</h1>
+                <a type="button" class="btn-add" href="post.php?source=add">All Post</a>
                 <?php
                 include "./includes/print_posts.php";
             }

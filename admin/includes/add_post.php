@@ -19,6 +19,9 @@ if(isset($_POST['add_post'])){
         die(mysqli_error($connection));
 
     }
+    else{
+    echo '<div class="alert alert-success">You Post Has Been Added</div>';
+    }
 }
 
 ?>

@@ -1,13 +1,5 @@
  <?php
 
-if(isset($_GET['remove'])){
-    $id = $_GET['remove'];
-    $query = "DELETE FROM posts where post_id ='$id'";
-    $result = mysqli_query($connection,$query);
-    header("Location:post.php");
-
-}
-
    global $connection;
     $query = "SELECT * FROM posts";
 
@@ -24,7 +16,10 @@ if(isset($_GET['remove'])){
                 <p class="card-text"><?php echo $row['post_content'] ?></p>
                 <p class="card-text"><small class="text-muted"><?php echo $row['post_date'] ?></small></p>
             </div>
-            <a class="glyphicon glyphicon-trash delete_post" href="post.php?remove=<?php echo $row['post_id']?>"></a>
+            <span>
+                <a class="glyphicon glyphicon-pencil delete_post" href="post.php?source=edit&id=<?php echo $row['post_id']?>"></a>
+                <a class="glyphicon glyphicon-trash delete_post" href="post.php?source=remove&id=<?php echo $row['post_id']?>"></a>
+            </span>
         </div>
         <?php
     }
