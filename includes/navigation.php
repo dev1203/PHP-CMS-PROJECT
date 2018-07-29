@@ -16,9 +16,8 @@
             <ul class="nav navbar-nav">
                 <!--    Adding Select query to get categories for header            -->
                 <?php
-                $query = "SELECT * FROM category";
-                $result = mysqli_query($connection,$query);
-                while($row = mysqli_fetch_assoc($result)){
+                $result_category= get_categories();
+                while($row = mysqli_fetch_assoc($result_category)){
                     echo "<li><a href=\"#\">".$row["title"]."</a></li>";
                 }
                 ?>

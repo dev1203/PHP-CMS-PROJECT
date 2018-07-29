@@ -23,8 +23,7 @@
             <!-- Blog Categories Well -->
 
             <?php
-            $query = "SELECT * FROM category LIMIT 6";
-            $result = mysqli_query($connection,$query);
+            $result =get_categories();
             while($row = mysqli_fetch_assoc($result)){
             ?>
             <div class="col-lg-6">
