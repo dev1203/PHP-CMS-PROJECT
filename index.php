@@ -32,6 +32,7 @@ function print_query($result){
     <div class="col-md-8">
 <?php
     while($row = mysqli_fetch_assoc($result)){
+        $post_id = $row["post_id"];
         $title = $row["post_title"];
         $author = $row["post_author"];
         $date = $row["post_date"];
@@ -40,7 +41,7 @@ function print_query($result){
         $tags= $row["post_tags"];
         ?>
         <h2>
-            <a href="#"><?php echo $title ?></a>
+            <a href="post.php?id=<?php echo $post_id ?>"><?php echo $title ?></a>
         </h2>
         <p class="lead">
             by <a href="index.php"><?php  echo $author ?></a>
@@ -50,7 +51,7 @@ function print_query($result){
         <img class="img-responsive" src="./Images/<?php echo $image?>" alt="">
         <hr>
         <p><?php  echo $content ?></p>
-        <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+        <a class="btn btn-primary" href="post.php?id=<?php echo $post_id ?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
         <hr>
         <?php
     }
