@@ -115,6 +115,6 @@
         </li>
     </ul>
     <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-    <?php include "sidebar.php"; ?>
+    <?php include "sidebar_admin.php"; ?>
     <!-- /.navbar-collapse -->
 </nav>
