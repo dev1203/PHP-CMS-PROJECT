@@ -18,7 +18,9 @@
                 <?php
                 $result_category= get_categories();
                 while($row = mysqli_fetch_assoc($result_category)){
-                    echo "<li><a href=\"#\">".$row["title"]."</a></li>";
+                    ?>
+                    <li><a href="categories_post.php?category=<?php echo $row['id']?>"><?php echo $row['title'];?></a></li>
+                <?php
                 }
                 ?>
                 <li><a href="admin/index.php">Admin</a></li>

@@ -1,7 +1,6 @@
 <!--  Header  -->
 <?php include "includes/header.php"; ?>
 
-<!--  Navigation  -->
 <?php include "includes/navigation.php";  ?>
 
 <div class="container">
@@ -12,25 +11,32 @@
                 Your Search Matches with following results.
             </h2>
         </div>
-            <?php
-            if(isset($_POST['search_post_with_tags'])){
-                $search_tags = $_POST['search_post_with_tags'];
-                $search_tags = mysqli_real_escape_string($connection,$search_tags);
-                $query_tags = "SELECT * FROM posts WHERE ";
-                $query_tags .= "post_tags LIKE '%$search_tags%'";
-                $result = mysqli_query($connection,$query_tags);
+
+        <?php
+            if(isset($_GET['category'])){
+                $id=$_GET['category'];
+                $query = "SELECT * FROM posts WHERE post_category_id = '$id'";
+                $result = mysqli_query($connection,$query);
                 if(mysqli_num_rows($result)==0) {
                     die(include "includes/noresults.php");
                 }
                 else{
                     print_query($result);
+
                 }
             }
             ?>
         <!-- Blog Sidebar Widgets Column -->
         <?php  include "includes/sidebar.php";?>
     </div>
+<!--<div class="row">-->
+<!--    <div class="col-md-8">-->
+<!--        <h1>Hello world</h1>-->
+<!--    </div>-->
+<!--</div>-->
     <!-- /.row -->
     <hr>
-</div>
-<?php include "includes/footer.php"; ?>
+
+<?php include "includes/footer.php" ?>
+
+

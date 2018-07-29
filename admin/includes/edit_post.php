@@ -18,13 +18,13 @@ if(isset($_POST['update_post'])){
 
     move_uploaded_file($temp_image,"../Images/".$image);
 
-    $query = "UPDATE posts SET post_title = '$title', post_author ='$author',post_date='$date',post_content='$content',post_tags='$tags', post_image = '$image' WHERE post_id = '$id'";
+    $query = "UPDATE posts SET post_category_id='$category',post_title = '$title', post_author ='$author',post_date='$date',post_content='$content',post_tags='$tags', post_image = '$image' WHERE post_id = '$id'";
     $result = mysqli_query($connection,$query);
     if(!$result){
         die(mysqli_error($connection));
-
     }
     else{
+        print_r(mysqli_error($connection));
         echo '<div class="alert alert-success">You Post Has Been Updated</div>';
     }
 }
@@ -52,10 +52,9 @@ if(isset($_POST['update_post'])){
         <input type="text" placeholder="Enter Title" name="tags" class="form-control" value="<?php echo $row['post_tags']?>">
 
         <label for="tags">Post Category</label>
-        <select class="form-control" value="category_id">
+        <select class="form-control" name="category_id" id="category_id">
             <?php
             global $connection;
-            $update = $_GET['edit'];
             $query = "SELECT * FROM category";
             $result = mysqli_query($connection,$query);
             while($row = mysqli_fetch_assoc($result)){
@@ -63,7 +62,6 @@ if(isset($_POST['update_post'])){
             }
             ?>
         </select>
-
-        <button type="submit" class="btn btn-dark" name="update_post" value="<?php echo $row['post_id'] ?>">Save</button>
+        <button type="submit" class="btn btn-dark" name="update_post" value="<?php echo $_GET['id'];?>">Save</button>
     </div>
 </form>
