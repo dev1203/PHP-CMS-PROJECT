@@ -9,8 +9,6 @@
                 $source = $_GET['add'];
                 if($source==="post"){
                     ?>
-                    <a type="button" class="btn-add" href="post.php">Back</a>
-
                     <?php
                     include "./includes/add_post.php";
                 }

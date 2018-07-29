@@ -29,7 +29,7 @@ function print_all_categories(){
     while($row = mysqli_fetch_assoc($result)){
         ?>
         <li class="list-group-item list-group-item-action" data-toggle="list" role="tab"><?php echo $row['title'] ?>
-            <a href="categories.php?delete=<?php echo $row['id'] ?>" class="glyphicon glyphicon-trash"></a>
+            <a href="categories.php?delete=<?php echo $row['id'] ?>" class="glyphicon glyphicon-trash delete"></a>
             <a href="categories.php?edit=<?php echo $row['id'] ?>" class="glyphicon glyphicon-edit"></a>
         </li>
         <?php

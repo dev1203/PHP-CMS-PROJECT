@@ -8,8 +8,8 @@
             <ul id="post" class="collapse">
 
                 <li class="menu-options">
-                    <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> View All Posts</a>
-                    <a href="post.php"><i class="glyphicon glyphicon-plus"></i>  Add Post</a>
+                    <a href="post.php"><i class="fa fa-fw fa-desktop"></i> View All Posts</a>
+                    <a href="post.php?add=post"><i class="glyphicon glyphicon-plus"></i>  Add Post</a>
 
                 </li>
             </ul>

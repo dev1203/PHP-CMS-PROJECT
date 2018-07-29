@@ -226,7 +226,7 @@ ul.alert-dropdown {
 .panel-yellow a:hover {
     color: #df8a13;
 }
-.glyphicon-trash{
+.delete{
     float: right;
     margin-right: 50px;
 
@@ -247,6 +247,7 @@ ul.alert-dropdown {
     border-radius: 15px;
     padding: 10px 40px;
     position: relative;
+    max-height: 500px;
 }
 .glyphicon-comment{
     position: absolute;
@@ -289,12 +290,18 @@ ul.alert-dropdown {
     margin-top: 20px;
 }
 .form-control{
-
     width: 60vw;
 }
 
 textarea.form-control{
     height: 25vh;
+}
+.delete_post{
+    text-decoration: none;
+    color: white;
+}
+.delete_post:hover{
+    text-decoration: none;
 }
 
 

@@ -15,11 +15,9 @@ if(isset($_POST['add_post'])){
 
     $query = "INSERT INTO posts (post_title,post_author,post_date,post_image,post_content,post_tags) VALUES ('$title','$author','$date','$image','$content','$tags')";
     $result = mysqli_query($connection,$query);
-    if($result){
-        echo "yay";
-    }
-    else{
+    if(!$result){
         die(mysqli_error($connection));
+
     }
 }
 
