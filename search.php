@@ -1,24 +1,31 @@
-<?php include "includes/db.php"; ?>
+<!--  Header  -->
 <?php include "includes/header.php"; ?>
+
+<!--  Navigation  -->
 <?php include "includes/navigation.php";  ?>
+
 <div class="container">
     <div class="row">
         <!-- Blog Entries Column -->
         <div class="col-md-8">
-
-            <h1 class="page-header">
-                Page Heading
-                <small>Secondary Text</small>
-            </h1>
+            <h2 class="page-header">
+                Your Search Matches with following results.
+            </h2>
         </div>
             <?php
-            if(isset($_POST['search'])){
-                $search = $_POST['search'];
-                $query = "SELECT * FROM posts WHERE post_tags LIKE '%$search%'";
-                $result = mysqli_query($connection,$query);
-                print_query($result);
+            if(isset($_POST['search_post_with_tags'])){
+                $search_tags = $_POST['search_post_with_tags'];
+                $search_tags = mysqli_real_escape_string($connection,$search_tags);
+                $query_tags = "SELECT * FROM posts WHERE ";
+                $query_tags .= "post_tags LIKE '%$search_tags%'";
+                $result = mysqli_query($connection,$query_tags);
+                if(mysqli_num_rows($result)==0) {
+                    die(include "includes/noresults.php");
+                }
+                else{
+                    print_query($result);
+                }
             }
-
             ?>
         <!-- Blog Sidebar Widgets Column -->
         <?php  include "includes/sidebar.php";?>
@@ -53,11 +60,8 @@ function print_query($result){
             <p><?php  echo $content ?></p>
             <a class="btn btn-primary" href="post.php?id=<?php echo $post_id ?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
             <hr>
-            <?php
-        }
-        ?>
+  <?php } ?>
     </div>
-<?php
-}
-?>
+<?php } ?>
+
 <?php include "includes/footer.php"; ?>
