@@ -1,46 +1,50 @@
 <?php include "includes/header_admin.php" ?>
-<?php include "includes/navigation_admin.php"; ?>
 <?php
+if(isset($_POST["category_add"])){
+    $category = $_POST["category_add"];
+    if($category){
+        $query_add_category = "INSERT INTO category (title) VALUES ('$category')";
+        $result = mysqli_query($connection,$query_add_category);
+        if($result){
+            echo "yay";
+        }
+    }
+}
 if(isset($_GET['delete'])){
     $id = $_GET['delete'];
     $query = "DELETE FROM category WHERE id = '$id'";
     $result = mysqli_query($connection,$query);
     header("Location:categories.php");
 }
-if(isset($_GET['accept'])){
-    $id = $_GET['accept'];
-    $query = "UPDATE category SET status = 'accepted' WHERE id='$id'";
-    $result = mysqli_query($connection,$query);
-    header("Location:categories.php");
 
+if (isset($_POST['update'])){
+    $update = $_POST['update'];
+    $id = $_POST['id'];
+    if($update){
+        $query = "UPDATE category SET title = '$update' WHERE id='$id'";
+        $result = mysqli_query($connection, $query);
+    }
 }
 ?>
-<div class="container">
-    <div class="row">
-    <div class="col col-m-2">
+<div id="wrapper">
+    <?php include "includes/navigation_admin.php"; ?>
 
-    </div>
-    <div class="col col-sm-10">
-        <div id="wrapper">
-            <div id="page-wrapper">
-                <form method="post" action="categories.php">
-                    <div class="form-group container">
-                        <div class="row">
-                                <input class="form-control col col-sm-9" placeholder="Enter Category" name="category">
-                                <button class="btn btn-primary col col-sm-2" type="submit">Submit</button>
-                        </div>
-                    </div>
-                </form>
-                <?php
-                update_category();
-                ?>
-                <?php
-                print_all_categories();
-                ?>
-            </div>
+    <div id="page-wrapper">
+            <form method="post" action="categories.php">
+                <div class="form-group">
+                    <input class="form-control" placeholder="Enter Category" name="category_add">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+            </form>
+
+        <?php
+            update_category();
+        ?>
+        <div class="list-group" id="list-tab" role="tablist">
+            <?php
+            print_all_categories();
+            ?>
         </div>
     </div>
 </div>
-</div>
-
 <?php include "includes/footer_admin.php" ?>
