@@ -19,7 +19,7 @@ if(isset($_GET['id'])){
                 <!-- Blog Post -->
 
                 <!-- Title -->
-                <h1 ><?php echo $row['post_title'];?></h1>
+                <h1><?php echo $row['post_title'];?></h1>
 
                 <!-- Author -->
                 <p class="lead">

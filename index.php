@@ -10,8 +10,8 @@
         <div class="row">
            <div class="col-md-8">
                <h1 class="page-header">
-                   Page Heading
-                   <small>Secondary Text</small>
+                   Blogify
+                   <small>Computer Science Posts <small>by professionals</small></small>
                </h1>
            </div>
 
