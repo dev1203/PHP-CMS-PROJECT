@@ -240,7 +240,7 @@ ul.alert-dropdown {
     width: 40%;
     height: 100%;
  }
-.card{
+.cards{
     margin-top: 50px;
     color: white;
     background-color: #333;
@@ -303,5 +303,9 @@ textarea.form-control{
 .delete_post:hover{
     text-decoration: none;
 }
-
+.approve:hover{
+    text-decoration: none;
+    cursor: pointer;
+    color: green;
+}
 

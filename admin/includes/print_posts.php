@@ -7,7 +7,7 @@
 
     while($row = mysqli_fetch_assoc($result)){
         ?>
-        <div class="card mb-3">
+        <div class="cards mb-3">
             <h3 class="card-title"><?php echo $row['post_title'] ?><small> by <?php echo $row['post_author'] ?></small></h3>
             <span class="glyphicon glyphicon-comment"> <i><?php echo $row['post_comment_count'] ?></i> </span>
 
