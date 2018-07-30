@@ -25,6 +25,7 @@ if(isset($_GET['id'])){
 
 if(isset($_POST['comment_content'])){
     $content_comment = $_POST['comment_content'];
+    $content_comment = mysqli_escape_string($connection,$content_comment);
     $post_id = $_GET['id'];
     $pending= "pending";
     $query_add_comment = "INSERT INTO comments (comment_post_id,comment_date,comment_content,comment_status) VALUES ";
