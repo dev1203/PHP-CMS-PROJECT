@@ -7,8 +7,8 @@
 /* Global Styles */
 
 body {
-    margin-top: 100px;
-    background-color: #222;
+    padding:0px;
+    margin: 0px;
 }
 
 @media(min-width:768px) {
@@ -17,15 +17,11 @@ body {
     }
 }
 
-#wrapper {
-    padding-left: 0;
-}
-
 #page-wrapper {
     width: 100%;
     padding: 0;
     background-color: #fff;
-    height: 90vh;
+    height: 100vh;
     overflow: auto;
 }
 
@@ -34,22 +30,12 @@ body {
     line-height: normal;
 }
 
-@media(min-width:768px) {
-
-    #wrapper {
-        padding-left: 225px;
-    }
-
-    #page-wrapper {
-        /*padding: 10px;*/
-    }
-}
 
 /* Top Navigation */
 
-.top-nav {
-    padding: 0 15px;
-}
+/*.top-nav {*/
+    /*padding: 0 15px;*/
+/*}*/
 
 .top-nav>li {
     display: inline-block;
@@ -226,62 +212,15 @@ ul.alert-dropdown {
 .panel-yellow a:hover {
     color: #df8a13;
 }
-.delete{
-    float: right;
-    margin-right: 50px;
 
-}
-.glyphicon-edit{
-    float: right;
-    margin-right: 20px;
-
-}
 .post-image{
     width: 40%;
     height: 100%;
  }
-.cards{
-    margin-top: 50px;
-    color: white;
-    background-color: #333;
-    border-radius: 15px;
-    padding: 10px 40px;
-    position: relative;
-    max-height: 500px;
-}
-.glyphicon-comment{
-    position: absolute;
-    top:20px;
-    right: 50px;
-}
-#page-wrapper::-webkit-scrollbar-track
-{
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    border-radius: 10px;
-    background-color: #F5F5F5;
+.card{
+    max-width: 800px;
 }
 
-#page-wrapper::-webkit-scrollbar
-{
-    width: 12px;
-    background-color: #F5F5F5;
-}
-
-#page-wrapper::-webkit-scrollbar-thumb
-{
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-    background-color: #555;
-}
-.btn-add{
-    position: absolute;
-    top:70px;
-    right: 50px;
-    border-radius: 15px;
-    padding: 15px;
-    background: #333;
-    color: white;
-}
 .btn-add:hover{
     text-decoration: none;
     color: white;
@@ -347,3 +286,41 @@ textarea.form-control{
 }
 
 
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 20px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.main {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    font-size: 20px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}

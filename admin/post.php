@@ -1,7 +1,5 @@
 <?php include "includes/header_admin.php" ?>
 <?php include "includes/navigation_admin.php"; ?>
-<div id="wrapper">
-    <div id="page-wrapper">
         <?php
         if(isset($_GET)){
             if(!empty($_GET['source'])){
@@ -27,14 +25,11 @@
             }
             else{
                 ?>
-                <h1 class="page-header">All Posts</h1>
-                <a type="button" class="btn-add" href="post.php?source=add">All Post</a>
                 <?php
                 include "./includes/print_posts.php";
             }
         }
         ?>
-    </div>
-</div>
+
 
 <?php include "includes/footer_admin.php" ?>
