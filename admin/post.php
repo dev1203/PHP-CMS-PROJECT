@@ -8,7 +8,7 @@
                 $source = $_GET['source'];
                 if($source==="add"){
                     ?>
-                    <h1 class="page-header">Add Post</h1>
+                    <h1 class="page-header container-fluid">Add Post</h1>
                     <?php
 
                     include "./includes/add_post.php";

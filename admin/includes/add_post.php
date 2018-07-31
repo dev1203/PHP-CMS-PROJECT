@@ -26,7 +26,7 @@ if(isset($_POST['add_post'])){
 
 ?>
 <form action="" method="post" enctype="multipart/form-data">
-    <div class="form-group">
+    <div class="form-group container-fluid" >
         <label for="title">Post Title</label>
         <input type="text" placeholder="Enter Title" name="title" class="form-control">
 
