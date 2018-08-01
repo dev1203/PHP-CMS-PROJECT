@@ -24,8 +24,8 @@ if(isset($_GET['remove'])){
 
 }
 ?>
-<div id="wrapper">
-    <div id="page-wrapper">
+<div class="container" id="content-page">
+    <div class="row">
         <div class="container-fluid">
             <div class="row">
                 <div class="container-fluid">
@@ -69,9 +69,9 @@ if(isset($_GET['remove'])){
                                 echo "<td>{$row['comment_status']}</td>";
                                 $id = $row['comment_id'];
                                 echo "<td><a class='glyphicon glyphicon-remove' href='comments.php?remove={$id}'</a></td>";
-                                }
-                                ?>
-                                </tr>
+                            }
+                            ?>
+                        </tr>
 
                         </tr>
                     </table>
@@ -115,12 +115,12 @@ if(isset($_GET['remove'])){
                                 echo "<td>{$row['comment_status']}</td>";
                                 ?>
                                 <td>
-                                   <a class="glyphicon glyphicon-ok approve" href="comments.php?approve=<?php echo$row['comment_id'];?>&post=<?php echo $row['comment_post_id'];?>"></a>
+                                    <a class="glyphicon glyphicon-ok approve" href="comments.php?approve=<?php echo$row['comment_id'];?>&post=<?php echo $row['comment_post_id'];?>"></a>
                                     <a class="glyphicon glyphicon-remove" href="comments.php?remove=<?php echo$row['comment_id'];?>"></a>
 
                                 </td>
 
-                            <?php
+                                <?php
                                 echo "</tr>";
                             }
                             ?>
@@ -131,6 +131,7 @@ if(isset($_GET['remove'])){
         </div>
     </div>
 </div>
+
 
 <?php include "includes/footer_admin.php" ?>
 

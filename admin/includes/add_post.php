@@ -1,3 +1,4 @@
+<?php  include "navigation_admin.php";?>
 <?php
 
 if(isset($_POST['add_post'])){
@@ -25,26 +26,30 @@ if(isset($_POST['add_post'])){
 }
 
 ?>
-<form action="" method="post" enctype="multipart/form-data">
-    <div class="form-group container-fluid" >
-        <label for="title">Post Title</label>
-        <input type="text" placeholder="Enter Title" name="title" class="form-control">
+<div class="container" id="content-page">
+    <div class="row">
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="form-group container-fluid" >
+                <label for="title">Post Title</label>
+                <input type="text" placeholder="Enter Title" name="title" class="form-control">
 
-        <label for="author">Post Title</label>
-        <input type="text" placeholder="Enter Author" name="author" class="form-control">
+                <label for="author">Post Title</label>
+                <input type="text" placeholder="Enter Author" name="author" class="form-control">
 
-        <label for="date">Post Date</label>
-        <input type="date" placeholder="Enter Title" name="date" class="form-control">
+                <label for="date">Post Date</label>
+                <input type="date" placeholder="Enter Title" name="date" class="form-control">
 
-        <label for="date">Image</label>
-        <input type="file" accept="image/*" class="form-control" name="image">
+                <label for="date">Image</label>
+                <input type="file" accept="image/*" class="form-control" name="image">
 
-        <label for="date">Post Date</label>
-        <textarea class="form-control text" placeholder="Enter Content" name="content"></textarea>
+                <label for="date">Post Date</label>
+                <textarea class="form-control text" placeholder="Enter Content" name="content"></textarea>
 
-        <label for="tags">Post Tags</label>
-        <input type="text" placeholder="Enter Title" name="tags" class="form-control">
+                <label for="tags">Post Tags</label>
+                <input type="text" placeholder="Enter Title" name="tags" class="form-control">
 
-        <button type="submit" class="btn btn-dark" name="add_post">Save</button>
+                <button type="submit" class="btn btn-dark" name="add_post">Save</button>
+            </div>
+        </form>
     </div>
-</form>
+</div>

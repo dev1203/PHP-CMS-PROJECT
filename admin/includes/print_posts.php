@@ -15,8 +15,8 @@
             </div>
             <hr>
             <div class="container">
-                <button type="button" class="btn margin btn-primary col-sm-2"><a><i class="fa fa-edit"></i></a></button>
-                <button type="button" class="btn margin btn-danger col-sm-2"><a><i class="fa fa-trash-o"></i></a></button>
+                <button type="button" class="btn margin btn-primary col-sm-2"><a class="delete_post" href="post.php?source=edit&id=<?php echo $row['post_id'];?>"><i class="fa fa-edit"></i></a></button>
+                <button type="button" class="btn margin btn-danger col-sm-2"><a class="delete_post" href="post.php?source=remove&id=<?php echo $row['post_id'];?>"><i class="fa fa-trash-o"></i></a></button>
             </div>
         </div>
     <?php
