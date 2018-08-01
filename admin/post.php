@@ -3,14 +3,8 @@
         if(isset($_GET)){
             if(!empty($_GET['source'])){
                 $source = $_GET['source'];
-                if($source==="add"){
-                    ?>
-                    <h1 class="page-header container-fluid">Add Post</h1>
-                    <?php
 
-                    include "./includes/add_post.php";
-                }
-                else if($source==="remove"){
+                if($source==="remove"){
 
                     include "./includes/remove_post.php";
                 }
