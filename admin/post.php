@@ -1,5 +1,4 @@
 <?php include "includes/header_admin.php" ?>
-<?php include "includes/navigation_admin.php"; ?>
         <?php
         if(isset($_GET)){
             if(!empty($_GET['source'])){
@@ -30,6 +29,4 @@
             }
         }
         ?>
-
-
 <?php include "includes/footer_admin.php" ?>

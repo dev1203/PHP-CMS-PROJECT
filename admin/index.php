@@ -1,12 +1,8 @@
 <?php include "includes/header_admin.php" ?>
 <?php include "includes/navigation_admin.php"; ?>
-<div class="container">
-<div class="row">
-    <div class="col col-sx-2">
+<div class="container" id="content-page">
+    <div class="row">
+        <h1>Hello world</h1>
     </div>
-    <div class="col col-md-10">
-        <h1> Hello</h1>
-    </div>
-</div>
 </div>
 <?php include "includes/footer_admin.php" ?>
