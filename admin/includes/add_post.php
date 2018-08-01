@@ -27,9 +27,9 @@ if(isset($_POST['add_post'])){
 
 ?>
 <div class="container" id="content-page">
-    <div class="row">
+    <div class="row form-wrapper">
         <form action="" method="post" enctype="multipart/form-data">
-            <div class="form-group container-fluid" >
+            <div class="form-group" >
                 <label for="title">Post Title</label>
                 <input type="text" placeholder="Enter Title" name="title" class="form-control">
 
@@ -53,3 +53,4 @@ if(isset($_POST['add_post'])){
         </form>
     </div>
 </div>
+

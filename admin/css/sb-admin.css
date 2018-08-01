@@ -9,13 +9,9 @@
 body {
     padding:0px;
     margin: 0px;
+    padding-top: 20px;
 }
 
-@media(min-width:768px) {
-    body {
-        margin-top: 50px;
-    }
-}
 
 #page-wrapper {
     width: 100%;
@@ -234,9 +230,7 @@ ul.alert-dropdown {
 .btn-dark{
     margin-top: 20px;
 }
-.form-control{
-    width: 60vw;
-}
+
 
 textarea.form-control{
     height: 25vh;
@@ -350,4 +344,16 @@ body {
 }
 .card-body{
    margin-left: 20px;
+}
+
+.form-wrapper{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    margin: 0 10%;
+    /*color: #fff;*/
+}
+.form-wrapper input{
+    background: transparent;
 }
