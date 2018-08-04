@@ -1,5 +1,14 @@
 <?php include "includes/header_admin.php" ?>
 <?php include "includes/navigation_admin.php"; ?>
+<?php
+if(isset($_GET['delete'])){
+    $id = $_GET['delete'];
+    die("came here");
+    $query = "DELETE FROM category WHERE id = '$id'";
+    $result = mysqli_query($connection,$query);
+    header("Location:categories.php");
+}
+?>
 <div class="container">
     <div class="row">
     <div class="col col-m-2">

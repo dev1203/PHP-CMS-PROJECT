@@ -21,7 +21,7 @@ function print_query($result){
                 </p>
                 <p><span class="glyphicon glyphicon-time"></span><?php echo " ".$date ?></p>
                 <hr>
-                <img class="img-responsive" src="./Images/<?php echo $image?>" alt="">
+                <img class="img-responsive post-image" src="./Images/<?php echo $image?>" alt="">
                 <hr>
                 <p><?php  echo $content ?></p>
                 <a class="btn btn-primary" href="post.php?id=<?php echo $post_id ?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>

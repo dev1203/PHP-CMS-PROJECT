@@ -24,6 +24,8 @@
                 }
                 ?>
                 <li><a href="admin/index.php">Admin</a></li>
+                <li><a href="login.php">Log In</a></li>
+
                 <!---------------------------------------------->
             </ul>
         </div>

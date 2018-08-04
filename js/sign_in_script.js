@@ -12,3 +12,6 @@ let UIController=function(){
 
 }();
 
+$("#back_button").on('click',()=>{
+    history.back();
+});

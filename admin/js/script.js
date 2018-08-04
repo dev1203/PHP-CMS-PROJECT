@@ -1,4 +1,4 @@
 setTimeout(function(){
-    if( $('.message').is(':visible') )
-        $(".message").fadeOut(4000);
+    if( $('.message').is(':visible'))
+        $('.message'').fadeOut(4000);
 },100);
