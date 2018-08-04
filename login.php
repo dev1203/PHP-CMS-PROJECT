@@ -1,5 +1,5 @@
 <?php include "includes/db.php"; ?>
-
+<?php  session_start(); ?>
 <?php
  if(isset($_POST['login'])){
     $username = $_POST['username'];
@@ -15,8 +15,20 @@
         die(mysqli_error($connection));
     }
     else{
-    $row = mysqli_fetch_assoc($result);
-    print_r($row);
+        $row = mysqli_fetch_assoc($result);
+        $db_user_name = $row['username'];
+        $db_user_password = $row['password'];
+
+        if($db_user_name !== $username && $db_user_password !== $password){
+            echo "<h5 class='message'>Username or password didn't match</h5>";
+        }
+        else if($db_user_name === $username && $db_user_password === $password){
+            $_SESSION['username'] = $username;
+            $_SESSION['firstname'] = $row['firstname'];
+            $_SESSION['lastname'] = $row['lastname'];
+            $_SESSION['role'] = $row['role'];
+            header("location:index.php");
+        }
     }
  }
 ?>

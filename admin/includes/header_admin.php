@@ -1,4 +1,10 @@
 <?php ob_start(); ?>
+<?php  session_start(); ?>
+<?php
+    if(!isset($_SESSION['role'])){
+        header("location:../login.php");
+    }
+?>
 <?php include "../includes/db.php" ?>
 <?php include "function.php"?>
 <!DOCTYPE html>
