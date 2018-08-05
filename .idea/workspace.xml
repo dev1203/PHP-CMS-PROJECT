@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="852d6c81-7fdf-42f1-8101-b4c27f6bde65" name="Default" comment="Adding Dynamic posts and content">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/css/sb-admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/css/sb-admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/includes/navigation_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/navigation_admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
-    </list>
+    <list default="true" id="852d6c81-7fdf-42f1-8101-b4c27f6bde65" name="Default" comment="Adding Dynamic posts and content" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,8 +42,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+            <state relative-caret-position="306">
+              <caret line="18" column="2" lean-forward="true" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -56,8 +51,8 @@
       <file leaf-file-name="sb-admin.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/css/sb-admin.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="403" lean-forward="true" selection-start-line="403" selection-end-line="403" />
+            <state relative-caret-position="487">
+              <caret line="404" lean-forward="true" selection-start-line="404" selection-end-line="404" />
             </state>
           </provider>
         </entry>
@@ -261,7 +256,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104021000" />
+    <option name="totallyTimeSpent" value="104024000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
@@ -632,8 +627,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/css/sb-admin.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="403" lean-forward="true" selection-start-line="403" selection-end-line="403" />
+        <state relative-caret-position="487">
+          <caret line="404" lean-forward="true" selection-start-line="404" selection-end-line="404" />
         </state>
       </provider>
     </entry>
@@ -646,8 +641,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+        <state relative-caret-position="306">
+          <caret line="18" column="2" lean-forward="true" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
         </state>
       </provider>
     </entry>
