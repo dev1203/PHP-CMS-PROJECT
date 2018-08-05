@@ -8,8 +8,7 @@
     $result_num_comments=comment::get_all_comment();
     $num_comments = mysqli_num_rows($result_num_comments);
 
-    $query_num_users = "SELECT * FROM users";
-    $result_num_users = mysqli_query($connection,$query_num_users);
+    $result_num_users = users::get_all_user();
     $num_users = mysqli_num_rows($result_num_users);
 
     $result_num_categories= category::get_all_categories();
