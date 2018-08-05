@@ -1,5 +1,4 @@
 <?php include "includes/header_admin.php" ?>
-<?php include "controller/post_controller.php" ?>
 <?php include "includes/navigation_admin.php"?>
 <?php
 //checking if the page has been requested

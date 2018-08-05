@@ -1,14 +1,11 @@
 <?php include "includes/header_admin.php" ?>
-<?php include "controller/post_controller.php" ?>
-<?php include "controller/category_controller.php" ?>
 <?php include "includes/navigation_admin.php"; ?>
 <?php
 
     $result_num_posts = post::get_all_posts();
     $num_posts = mysqli_num_rows($result_num_posts);
 
-    $query_num_comments = "SELECT * FROM comments";
-    $result_num_comments = mysqli_query($connection,$query_num_comments);
+    $result_num_comments=comment::get_all_comment();
     $num_comments = mysqli_num_rows($result_num_comments);
 
     $query_num_users = "SELECT * FROM users";

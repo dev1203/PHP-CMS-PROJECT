@@ -28,7 +28,7 @@ class category{
     static function add_category($category){
         global $connection;
         $category_to_add = validate_query($category);
-        $query_add_category = "INSERT INTO category (title) VALUES ('$category_to_add')";
+        $query_add_category = "INSERT INTO category (title,status) VALUES ('$category','pending')";
         $result = mysqli_query($connection,$query_add_category);
     }
 
@@ -37,6 +37,13 @@ class category{
         $id_to_delete = validate_query($id);
         $query_delete = "DELETE FROM category WHERE id = '$id_to_delete'";
         $result_deleted = mysqli_query($connection,$query_delete);
+    }
+
+    static function accept_category($id){
+        global $connection;
+        $id_to_approve = validate_query($id);
+        $query_to_approve = "UPDATE category SET status = 'accepted' WHERE id='$id_to_approve'";
+        $result_approve = mysqli_query($connection,$query_to_approve);
     }
 
 }

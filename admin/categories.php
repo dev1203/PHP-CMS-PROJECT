@@ -1,5 +1,4 @@
 <?php include "includes/header_admin.php" ?>
-<?php include "controller/category_controller.php" ?>
 
 <?php
 if(isset($_POST["category_add"])){
@@ -8,9 +7,16 @@ if(isset($_POST["category_add"])){
         category::add_category($category);
     }
 }
+
 if(isset($_GET['delete'])){
     $id = $_GET['delete'];
     category::delete_category($id);
+    header("Location:categories.php");
+}
+
+if(isset($_GET['accept'])){
+    $id = $_GET['accept'];
+    category::accept_category($id);
     header("Location:categories.php");
 }
 

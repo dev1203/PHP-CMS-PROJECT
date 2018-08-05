@@ -7,6 +7,10 @@
 ?>
 <?php include "../includes/db.php" ?>
 <?php include "function.php"?>
+<?php include "controller/comment_controller.php" ?>
+<?php include "controller/category_controller.php" ?>
+<?php include "controller/post_controller.php" ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
