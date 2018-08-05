@@ -1,4 +1,5 @@
 <div class="sidenav">
+    <a href="../index.php"><i class="fa fa-home" aria-hidden="true">  CMS</i></a>
     <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
     <a href="categories.php"><i class="fa fa-fw fa-wrench"></i> Categories</a>
     <a href="post.php"><i class="fa fa-fw fa-desktop"></i> View All Posts</a>
