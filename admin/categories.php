@@ -26,10 +26,9 @@ if (isset($_POST['update'])){
     }
 }
 ?>
-<div id="wrapper">
     <?php include "includes/navigation_admin.php"; ?>
+<div class="container black" id="content-page">
 
-    <div id="page-wrapper">
             <form method="post" action="categories.php">
                 <div class="form-group">
                     <input class="form-control" placeholder="Enter Category" name="category_add">
@@ -40,11 +39,8 @@ if (isset($_POST['update'])){
         <?php
             update_category();
         ?>
-        <div class="list-group" id="list-tab" role="tablist">
             <?php
             print_all_categories();
             ?>
-        </div>
-    </div>
 </div>
 <?php include "includes/footer_admin.php" ?>
