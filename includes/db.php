@@ -14,4 +14,9 @@ if(!$connection){
     die(mysqli_error());
 }
 
+function validate_query($query){
+    global $connection;
+    return mysqli_real_escape_string($connection,$query);
+}
+
 ?>

@@ -1,8 +1,10 @@
 <?php include "includes/header_admin.php" ?>
+<?php include "controller/post_controller.php" ?>
+<?php include "controller/category_controller.php" ?>
 <?php include "includes/navigation_admin.php"; ?>
 <?php
-    $query_num_posts = "SELECT * FROM posts";
-    $result_num_posts = mysqli_query($connection,$query_num_posts);
+
+    $result_num_posts = post::get_all_posts();
     $num_posts = mysqli_num_rows($result_num_posts);
 
     $query_num_comments = "SELECT * FROM comments";
@@ -13,8 +15,7 @@
     $result_num_users = mysqli_query($connection,$query_num_users);
     $num_users = mysqli_num_rows($result_num_users);
 
-    $query_num_categories = "SELECT * FROM category";
-    $result_num_categories= mysqli_query($connection,$query_num_categories);
+    $result_num_categories= category::get_all_categories();
     $num_categories = mysqli_num_rows($result_num_categories);
 
     $pending_user ="SELECT * FROM users where user_status = 'pending'";

@@ -17,26 +17,7 @@ if (isset($_POST['update'])){
         $result = mysqli_query($connection, $query);
     }
 }
-function print_all_categories(){
-    global $connection;
-    $query = "SELECT * FROM category";
-    $result = mysqli_query($connection,$query);
-    while($row = mysqli_fetch_assoc($result)){
-        ?>
-        <div class="card category-card">
-            <div class="card-body">
-                <?php echo $row['title'] ?>
-                <a class="right" href="categories.php?delete=<?php echo $row['id'];?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
-                <?php if($row['status']=='pending'){?>
-                    <div>
-                        <a href="categories.php?accept=<?php echo $row['id'];?>"><button type="button" class="btn btn-success right">Accept</button></a>
-                    </div>
-                <?php }?>
-            </div>
-        </div>
-        <?php
-    }
-}
+
 function update_category(){
     if(isset($_GET['edit'])){
         global $connection;
