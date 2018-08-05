@@ -17,6 +17,22 @@
     $result_num_categories= mysqli_query($connection,$query_num_categories);
     $num_categories = mysqli_num_rows($result_num_categories);
 
+    $pending_user ="SELECT * FROM users where user_status = 'pending'";
+    $result_pending = mysqli_query($connection,$pending_user);
+    $num_pending_user = mysqli_num_rows($result_pending);
+
+    $pending_comment ="SELECT * FROM comments where comment_status = 'pending'";
+    $result_pending_comments = mysqli_query($connection,$pending_comment);
+    $num_pending_comments = mysqli_num_rows($result_pending_comments);
+
+    $pending_categories ="SELECT * FROM category where status = 'pending'";
+    $result_pending_categories = mysqli_query($connection,$pending_categories);
+    $num_pending_categories= mysqli_num_rows($result_pending_categories);
+
+    $pending_posts ="SELECT * FROM posts where post_status = 'pending'";
+    $result_pending_posts = mysqli_query($connection,$pending_posts);
+    $num_pending_posts= mysqli_num_rows($result_pending_posts);
+
 ?>
 
 <div class="container" id="content-page">
@@ -129,11 +145,12 @@
             function drawChart() {
 
                 var data = google.visualization.arrayToDataTable([
-                    ['Total', 'Total', 'Approved', 'Pending'],
-                    ['Posts', 1000, 400, 200],
-                    ['Comments', 1170, 460, 250],
-                    ['Users', 660, 1120, 300],
-                    ['Categories', 1030, 540, 350]
+                    ['Total', 'Total', 'Pending','Approved'],
+                    ['Posts', <?php echo $num_posts;?>,<?php echo($num_pending_posts); ?>, <?php echo ($num_posts-$num_pending_posts);?>],
+                    ['Comments', <?php echo $num_comments;?>,<?php echo($num_pending_comments); ?>, <?php echo ($num_comments-$num_pending_comments);?>],
+
+                    ['Users', <?php echo $num_users;?>,<?php echo($num_pending_user); ?>, <?php echo ($num_users-$num_pending_user);?>],
+                    ['Categories', <?php echo $num_categories;?>,<?php echo($num_pending_categories); ?>, <?php echo ($num_categories-$num_pending_categories);?>]
                 ]);
 
                 // Set chart options

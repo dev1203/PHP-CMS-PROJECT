@@ -14,7 +14,7 @@
                </h1>
            </div>
             <?php
-            $query_print_all_post = "SELECT * FROM posts";
+            $query_print_all_post = "SELECT * FROM posts WHERE post_status = 'accepted'";
             $result = mysqli_query($connection,$query_print_all_post);
 //            This function is available in functions.php
             print_query($result);
