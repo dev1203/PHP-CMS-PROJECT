@@ -8,6 +8,8 @@ class users{
     }
 
     static function add_user(){
+        global $connection;
+
         if(isset($_POST['add_user'])){
             $user_name = $_POST['user_name'];
             $first_name = $_POST['first_name'];
