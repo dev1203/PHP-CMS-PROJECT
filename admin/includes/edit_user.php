@@ -59,7 +59,7 @@
                                     <option value = "Admin">Admin</option>
                                 </select>
 
-                                <div><img src="../Images/<?php echo $row['user_image']?>"></div>
+                                <div><img class="edit-user" src="../Images/<?php echo $row['user_image']?>"></div>
 
                                 <label for="image">Image</label>
                                 <input type="file" accept="image/*" class="form-control" name="image" value="<?php echo $row['user_image'] ?>">

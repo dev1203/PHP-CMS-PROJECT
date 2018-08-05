@@ -6,6 +6,6 @@
     <a href="comments.php"><i class="fa fa-fw fa-file"></i> Comments</a>
     <a href="users.php?action=print"><i class="fa fa-globe"></i>  All users</a>
     <a href="add_user.php"><i class="fa fa-plus-circle"> </i>       Add Users</a>
-    <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> Profile</a>
+    <a href="profile.php"><i class="fa fa-fw fa-dashboard"></i> Profile</a>
     <a href="../admin/includes/logout.php"><i class="fa fa-sign-out"></i> Log Out</a>
 </div>

@@ -3,7 +3,6 @@
 <?php
 if(isset($_GET['delete'])){
     $id = $_GET['delete'];
-    die("came here");
     $query = "DELETE FROM category WHERE id = '$id'";
     $result = mysqli_query($connection,$query);
     header("Location:categories.php");
@@ -28,11 +27,9 @@ if(isset($_GET['delete'])){
                 <?php
                 update_category();
                 ?>
-                <div class="list-group" id="list-tab" role="tablist">
-                    <?php
-                    print_all_categories();
-                    ?>
-                </div>
+                <?php
+                print_all_categories();
+                ?>
             </div>
         </div>
     </div>

@@ -12,12 +12,17 @@ if(isset($_GET['remove_user'])){
 $get_all_users = "SELECT * FROM users";
 $result_all_users = mysqli_query($connection,$get_all_users);
 ?>
-<div class="container" id="content-page">
     <?php
     if(isset($_GET['action'])){
         $action = $_GET['action'];
         if($action=='print'){
+            ?>
+            <div class="container" id="content-page">
+            <?php
             include "./includes/print_user.php";
+            ?>
+            </div>
+            <?php
         }
         else if($action == 'edit'){
             include "./includes/edit_user.php";
@@ -25,6 +30,5 @@ $result_all_users = mysqli_query($connection,$get_all_users);
     }
     ?>
 
-</div>
 <?php include "includes/footer_admin.php" ?>
 

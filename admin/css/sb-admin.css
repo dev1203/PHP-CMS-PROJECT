@@ -222,6 +222,14 @@ ul.alert-dropdown {
     -moz-box-shadow: 0px 3px 19px -2px rgba(0,0,0,0.75);
     box-shadow: 0px 3px 19px -2px rgba(0,0,0,0.75);
 }
+.card_profile{
+    min-height: 70vh;
+}
+.profile_body{
+    position: absolute;
+    top:50%;
+    transform: translate(0,-50%);
+}
 
 .btn-add:hover{
     text-decoration: none;
@@ -282,7 +290,12 @@ textarea.form-control{
     padding: 0px;
     margin: 0px;
     opacity: 1;
+
     padding-top: 10px;
+}
+.panel-primary{
+    background: #2e6da4;
+    color: white;
 }
 .message-error{
     position: fixed;
@@ -298,6 +311,10 @@ textarea.form-control{
     margin: 0px;
     opacity: 1;
     padding-top: 10px;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 body {
@@ -370,4 +387,17 @@ body {
 }
 .form-wrapper input{
     background: transparent;
+}
+.edit-user{
+    padding:10px 10px;
+    width: 40vw;
+}
+.right{
+    float: right;
+}
+.category-card{
+    margin-top: 10px;
+}
+.category-card:last-of-type{
+    margin-bottom: 30px;
 }

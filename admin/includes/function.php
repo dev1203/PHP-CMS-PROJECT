@@ -23,8 +23,13 @@ function print_all_categories(){
     $result = mysqli_query($connection,$query);
     while($row = mysqli_fetch_assoc($result)){
         ?>
-        <li class="list-group-item list-group-item-action" data-toggle="list" role="tab"><?php echo $row['title'] ?>
-        </li>
+        <div class="card category-card">
+            <div class="card-body">
+                <?php echo $row['title'] ?>
+                <a class="right" href="categories.php?delete=<?php echo $row['id'];?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
+
+            </div>
+        </div>
         <?php
     }
 }
@@ -47,3 +52,4 @@ function update_category(){
 }
 
 ?>
+
