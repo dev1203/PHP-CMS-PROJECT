@@ -1,18 +1,15 @@
 <?php include "includes/header_admin.php" ?>
+<?php include "controller.php/post_controller.php" ?>
+<?php include "includes/navigation_admin.php"?>
         <?php
         if(isset($_GET)){
             if(!empty($_GET['source'])){
                 $source = $_GET['source'];
                 if($source==="add"){
-                    ?>
-                    <h1 class="page-header container-fluid">Add Post</h1>
-                    <?php
-
-                    include "./includes/add_post.php";
+                    post::add_post();
                 }
                 else if($source==="remove"){
-
-                    include "./includes/remove_post.php";
+                   post::remove_post($_GET['id']);
                 }
                 else if($source==="accept"){
                     $id =$_GET['id'];
@@ -22,17 +19,11 @@
                 }
 
                 else if($source==="edit"){
-                    ?>
-                    <h1 class="page-header">Edit Post</h1>
-                <?php
-                    include "./includes/edit_post.php";
-
+                    post::edit_post();
                 }
             }
             else{
-                ?>
-                <?php
-                include "./includes/print_posts.php";
+                post::print_post();
             }
         }
         ?>
