@@ -4,7 +4,7 @@ if(isset($_POST["category"])){
     global $connection;
 
     if($category){
-        $query = "INSERT INTO category (title) VALUES ('$category')";
+        $query = "INSERT INTO category (title,status) VALUES ('$category','pending')";
         $result = mysqli_query($connection,$query);
     }
 }
@@ -27,7 +27,11 @@ function print_all_categories(){
             <div class="card-body">
                 <?php echo $row['title'] ?>
                 <a class="right" href="categories.php?delete=<?php echo $row['id'];?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
-
+                <?php if($row['status']=='pending'){?>
+                    <div>
+                        <a href="categories.php?accept=<?php echo $row['id'];?>"><button type="button" class="btn btn-success right">Accept</button></a>
+                    </div>
+                <?php }?>
             </div>
         </div>
         <?php

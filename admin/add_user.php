@@ -15,8 +15,8 @@
 
         move_uploaded_file($temp_image,"../Images/".$user_image);
 
-        $query_to_add_user = "INSERT INTO users (username,firstname,lastname,email,password,role,user_image) VALUES ";
-        $query_to_add_user .= "('$user_name','$first_name','$last_name','$email','$password','$role','$user_image')";
+        $query_to_add_user = "INSERT INTO users (username,firstname,lastname,email,password,role,user_image,user_status) VALUES ";
+        $query_to_add_user .= "('$user_name','$first_name','$last_name','$email','$password','$role','$user_image','pending')";
         $result_add_user = mysqli_query($connection, $query_to_add_user);
 
         echo "<h5 class='message'>User is added Successfully</h5>";

@@ -12,7 +12,11 @@ while($row = mysqli_fetch_assoc($result_all_users)){
                 <p class="card-text">Role : <?php echo $row['role']?></p>
                 <a class="delete_post" href="users.php?remove_user=<?php echo $row['user_id'];?>"><button type="button" class="btn margin btn-danger col-sm-2"><i class="fa fa-trash-o"></i></button></a>
                 <a class="delete_post" href="users.php?action=edit&id=<?php echo $row['user_id'] ?>"><button type="button" class="btn margin btn-primary col-sm-2"><i class="fa fa-edit"></i></button></a>
-
+                <?php if($row['user_status']=='pending'){?>
+                <div>
+                    <a href="users.php?accept_user=<?php echo $row['user_id'];?>"><button type="button" class="btn btn-success">Accept</button></a>
+                </div>
+                <?php }?>
             </div>
         </div>
     </div>

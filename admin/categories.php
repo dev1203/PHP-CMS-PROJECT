@@ -7,6 +7,13 @@ if(isset($_GET['delete'])){
     $result = mysqli_query($connection,$query);
     header("Location:categories.php");
 }
+if(isset($_GET['accept'])){
+    $id = $_GET['accept'];
+    $query = "UPDATE category SET status = 'accepted' WHERE id='$id'";
+    $result = mysqli_query($connection,$query);
+    header("Location:categories.php");
+
+}
 ?>
 <div class="container">
     <div class="row">

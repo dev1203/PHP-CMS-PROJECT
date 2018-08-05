@@ -402,3 +402,7 @@ body {
     margin-bottom: 30px;
 }
 
+.chart{
+    padding-top: 10vh;
+    height: 60vh;
+}

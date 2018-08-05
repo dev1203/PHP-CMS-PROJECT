@@ -14,7 +14,7 @@ if(isset($_POST['add_post'])){
 
     move_uploaded_file($temp_image,"../Images/".$image);
 
-    $query = "INSERT INTO posts (post_title,post_author,post_date,post_image,post_content,post_tags) VALUES ('$title','$author','$date','$image','$content','$tags')";
+    $query = "INSERT INTO posts (post_title,post_author,post_date,post_image,post_content,post_tags,post_status) VALUES ('$title','$author','$date','$image','$content','$tags','pending')";
     $result = mysqli_query($connection,$query);
     if(!$result){
         die(mysqli_error($connection));

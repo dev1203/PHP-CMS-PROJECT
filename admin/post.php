@@ -14,6 +14,13 @@
 
                     include "./includes/remove_post.php";
                 }
+                else if($source==="accept"){
+                    $id =$_GET['id'];
+                    $query = "UPDATE posts SET post_status = 'accepted' WHERE post_id='$id'";
+                    $result = mysqli_query($connection, $query);
+                    header("location:post.php");
+                }
+
                 else if($source==="edit"){
                     ?>
                     <h1 class="page-header">Edit Post</h1>

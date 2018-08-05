@@ -17,6 +17,11 @@
             <div class="container">
                 <a class="delete_post" href="post.php?source=edit&id=<?php echo $row['post_id'];?>"><button type="button" class="btn margin btn-primary col-sm-2"><i class="fa fa-edit"></i></button></a>
                 <a class="delete_post" href="post.php?source=remove&id=<?php echo $row['post_id'];?>"><button type="button" class="btn margin btn-danger col-sm-2"><i class="fa fa-trash-o"></i></button></a>
+                <?php if($row['post_status']=='pending'){?>
+                    <div>
+                    <a class="delete_post" href="post.php?source=accept&id=<?php echo $row['post_id'];?>"><button type="button" class="btn margin btn-success col-sm-2">Accept</button></a>
+                    </div>
+                    <?php } ?>
             </div>
         </div>
     <?php

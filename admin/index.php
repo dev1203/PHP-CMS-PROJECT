@@ -16,6 +16,7 @@
     $query_num_categories = "SELECT * FROM category";
     $result_num_categories= mysqli_query($connection,$query_num_categories);
     $num_categories = mysqli_num_rows($result_num_categories);
+
 ?>
 
 <div class="container" id="content-page">
@@ -109,6 +110,44 @@
                 </div>
             </div>
         </div>
+    <div class="row">
+        <div class="col col-sm-12">
+            <div id="chart_div" class="chart">
+            </div>
+        </div>
+        <script type="text/javascript">
+
+            // Load the Visualization API and the corechart package.
+            google.charts.load('visualization', '1.1',{'packages':['bar']});
+
+            // Set a callback to run when the Google Visualization API is loaded.
+            google.charts.setOnLoadCallback(drawChart);
+
+            // Callback that creates and populates a data table,
+            // instantiates the pie chart, passes in the data and
+            // draws it.
+            function drawChart() {
+
+                var data = google.visualization.arrayToDataTable([
+                    ['Total', 'Total', 'Approved', 'Pending'],
+                    ['Posts', 1000, 400, 200],
+                    ['Comments', 1170, 460, 250],
+                    ['Users', 660, 1120, 300],
+                    ['Categories', 1030, 540, 350]
+                ]);
+
+                // Set chart options
+                var options = {
+                    chats:{
+                        title:'',
+                        subtitile:''
+                    }
+                };
+                var chart = new google.charts.Bar(document.getElementById('chart_div'));
+                chart.draw(data, options);
+            }
+        </script>
+    </div>
         <!-- /.row -->
 </div>
 <?php include "includes/footer_admin.php" ?>
