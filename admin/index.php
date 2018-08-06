@@ -1,7 +1,6 @@
 <?php include "includes/header_admin.php" ?>
 <?php include "includes/navigation_admin.php"; ?>
 <?php
-
     $result_num_posts = post::get_all_posts();
     $num_posts = mysqli_num_rows($result_num_posts);
 

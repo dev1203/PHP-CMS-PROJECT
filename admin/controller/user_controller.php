@@ -176,6 +176,21 @@ class users{
         }
     }
 
+    static function find_user($username){
+        global $connection;
+        $username = validate_query($username);
+
+        $query_to_find = "SELECT * FROM users ";
+        $query_to_find.= "WHERE username = '{$username}'";
+
+        $result = mysqli_query($connection,$query_to_find);
+
+        $row = mysqli_fetch_assoc($result);
+
+
+        return $row['user_id'];
+    }
+
     static function approve_user($user_id){
         global $connection;
         $user_id = validate_query($user_id);

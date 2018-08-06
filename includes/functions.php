@@ -7,7 +7,7 @@ function print_query($result){
             while($row = mysqli_fetch_assoc($result)){
                 $post_id = $row["post_id"];
                 $title = $row["post_title"];
-                $author = $row["post_author"];
+                $author = find_user($row["post_author"]);
                 $date = $row["post_date"];
                 $image = $row["post_image"];
                 $content = $row["post_content"];
@@ -17,7 +17,7 @@ function print_query($result){
                     <a href="post.php?id=<?php echo $post_id ?>"><?php echo $title ?></a>
                 </h2>
                 <p class="lead">
-                    by <a href="index.php"><?php  echo $author ?></a>
+                    by <a href="profile.php?profile=<?php echo $row["post_author"];?>"><?php  echo $author ?></a>
                 </p>
                 <p><span class="glyphicon glyphicon-time"></span><?php echo " ".$date ?></p>
                 <hr>
@@ -31,7 +31,20 @@ function print_query($result){
     <?php
 }
 //_-----------------------------------------------------------------------------
+function find_user($userid){
+    global $connection;
+    $username = validate_query($userid);
 
+    $query_to_find = "SELECT * FROM users ";
+    $query_to_find.= "WHERE user_id = '{$userid}'";
+
+    $result = mysqli_query($connection,$query_to_find);
+
+    $row = mysqli_fetch_assoc($result);
+
+
+    return $row['username'];
+}
 //This will print the post when clicked on post.php
 function show_post($row){
     ?>
@@ -49,7 +62,7 @@ function show_post($row){
 
         <!-- Author -->
         <p class="lead">
-            by <a href="#"><?php echo $row['post_author'];?></a>
+            by <a href="profile.php?profile=<?php echo ($row['post_author']);?>"><?php echo find_user($row['post_author']);?></a>
         </p>
 
         <hr>
