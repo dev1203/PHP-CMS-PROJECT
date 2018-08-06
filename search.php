@@ -32,5 +32,5 @@
     </div>
     <!-- /.row -->
     <hr>
-</div>
 <?php include "includes/footer.php"; ?>
+</div>

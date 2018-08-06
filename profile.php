@@ -22,6 +22,8 @@ if(isset($_GET['profile'])){
 
 }
 ?>
+<h2 class="text-center margin">All the Post by this User</h2>
+
 <div class="container ">
         <div class="col col-sm-8">
             <div class="card card_profile mb-3">
@@ -35,11 +37,11 @@ if(isset($_GET['profile'])){
             </div>
         </div>
     <div>
-        <h4 class="text-center margin">All the Post by this User</h4>
 
         <?php print_query($result_related_post);?>
-        </div>
+    </div>
         <?php include "includes/sidebar.php"?>
-</div>
 <?php include "includes/footer.php"; ?>
+</div>
+
 
