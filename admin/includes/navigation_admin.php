@@ -8,5 +8,7 @@
     <a href="users.php?action=print"><i class="icon fa fa-globe"></i>All users</a>
     <a href="users.php?action=add"><i class="icon fa fa-plus-circle"> </i>Add Users</a>
     <a href="profile.php"><i class="icon fa fa-fw fa-dashboard"></i>Profile</a>
+    <a href="add_page.php"><i class="icon fa fa-plus"></i>Add Page</a>
     <a href="../admin/includes/logout.php"><i class="icon fa fa-sign-out"></i>Log Out</a>
+
 </div>

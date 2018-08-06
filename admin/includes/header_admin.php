@@ -10,6 +10,7 @@
 <?php include "controller/category_controller.php" ?>
 <?php include "controller/post_controller.php" ?>
 <?php include "controller/user_controller.php" ?>
+<?php include "controller/page_controller.php" ?>
 
 
 <!DOCTYPE html>
