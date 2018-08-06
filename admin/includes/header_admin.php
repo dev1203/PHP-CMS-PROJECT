@@ -1,7 +1,7 @@
 <?php ob_start(); ?>
 <?php  session_start(); ?>
 <?php
-    if(!isset($_SESSION['role'])){
+    if(!isset($_SESSION['username'])){
         header("location:../login.php");
     }
 ?>

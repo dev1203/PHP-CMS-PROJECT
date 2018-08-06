@@ -1,12 +1,11 @@
 <?php include "includes/db.php"; ?>
-
 <?php  session_start(); ?>
 <?php
  if(isset($_POST['login'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
     $username = mysqli_real_escape_string($connection,$username);
-    $password = mysqli_real_escape_string($connection,$password);
+    $password = md5(mysqli_real_escape_string($connection,$password));
 
     $query_to_check_user = "SELECT * FROM users ";
     $query_to_check_user.= "WHERE username = '{$username}'";
@@ -31,6 +30,26 @@
             header("location:index.php");
         }
     }
+ }
+ if(isset($_POST['username_sign_up'])){
+     $username = validate_query($_POST['username_sign_up']);
+     $email = validate_query($_POST['email']);
+     $password = md5(validate_query($_POST['password']));
+
+     $query_add_user = "INSERT into users ";
+     $query_add_user.= "(username,email,password,role) VALUES";
+     $query_add_user.= "('{$username}','{$email}','{$password}','subscriber')";
+
+     $result_add_user = mysqli_query($connection,$query_add_user);
+
+     if(!$result_add_user){
+         die(mysqli_error($connection));
+     }
+     else{
+         $_SESSION['username'] = $username;
+         $_SESSION['email'] = $email;
+         header("location:index.php");
+     }
  }
 ?>
 
@@ -65,25 +84,25 @@
 
 </div>
 <div id="sign_up_page" class="container">
-    <div class="row sign_up_style">
+    <form class="row sign_up_style" method="post">
         <div class="col-sm-12 modal_page">
             <h3 class="text">SIGN UP</h3>
             <div class="form-group">
                 <label for="Name">UserName</label>
-                <input type="Name" class="form-control" id="Name" aria-describedby="emailHelp" placeholder="Enter Name">
+                <input type="Name" name="username_sign_up" class="form-control" id="Name" aria-describedby="emailHelp" placeholder="Enter Name">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="email" aria-describedby="	emailHelp" placeholder="Enter email">
+                <input type="email" name ="email" class="form-control" id="email" aria-describedby="	emailHelp" placeholder="Enter email">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="password"placeholder="Password">
+                <input type="password" name="password" class="form-control" id="password"placeholder="Password">
             </div>
             <button type="submit" class="btn btn-primary" id="submit">Submit</button>
-            <button type="submit" class="btn btn-primary" id="back">Back</button>
+            <button type="button" class="btn btn-primary" id="back">Back</button>
         </div>
-    </div>
+    </form>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src='./js/sign_in_script.js'></script>

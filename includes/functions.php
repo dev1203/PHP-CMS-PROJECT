@@ -77,7 +77,12 @@ function show_post($row){
             <h4>Leave a Comment:</h4>
             <form role="form" action="" method="post">
                 <div class="form-group">
-                    <textarea class="form-control" rows="3" name ="comment_content"></textarea>
+                    <textarea id = "editor2" class="form-control" rows="3" name ="comment_content"></textarea>
+                    <script>
+                        // Replace the <textarea id="editor1"> with a CKEditor
+                        // instance, using default configuration.
+                        CKEDITOR.replace( 'editor2' );
+                    </script>
                 </div>
                 <button type="submit" class="btn btn-primary" value="<?php echo $_GET['id'];?>">Submit</button>
             </form>
